@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Iyan & Jay - Act 1</title>
+		<title>Iyan & Jay - Act 1 Act 2</title>
 		<style type="text/css">
 			input { text-align:center; }
 		</style>
@@ -17,6 +17,37 @@
 		<center>
 			<h1 style='color:#ffffff'>ACT 1 ACT 2</h1>
 
+			<h1 style='color:#ffffff' id='countdown'></h1>
+			<script>
+				var end = new Date('2/27/2021 1:00 AM');
+
+				var _second = 1000;
+				var _minute = _second * 60;
+				var _hour = _minute * 60;
+				var _day = _hour * 24;
+				var timer;
+
+				function showRemaining() {
+					var now = new Date();
+					var nowUTC = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+					var distance = end - nowUTC;
+					if (distance < 0) {
+
+					  clearInterval(timer);
+					  document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+					  return;
+					}
+					var days = Math.floor(distance / _day);
+					var hours = Math.floor((distance % _day) / _hour);
+					var minutes = Math.floor((distance % _hour) / _minute);
+					var seconds = Math.floor((distance % _minute) / _second);
+
+					document.getElementById('countdown').innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+				}
+
+				timer = setInterval(showRemaining, 1000);
+			</script>
 		</center>
 		</body>
 </html>
