@@ -9,6 +9,9 @@
 	</head>
 	<body bgcolor=#444444>
 		<script>
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			const pass = urlParams.get('password');
 			if(pass != 'HJmM13') window.history.back();
 		</script>
 		<center>
