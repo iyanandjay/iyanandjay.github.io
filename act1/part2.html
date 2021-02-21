@@ -3,42 +3,34 @@
 <html>
 	<head>
 		<title>Iyan & Jay - Act 1</title>
+		<style type="text/css">
+			input { text-align:center; }
+		</style>
 	</head>
 	<body bgcolor=#444444>
 		<script>
 			if(pass.toUpperCase() != 'RAARNOTAO') window.history.back();
 		</script>
-		<h1 align='center' style='color:#ffffff' id="demo"></p>
-		<script>
-			var end = new Date('2/21/2021 5:00 PM');
-
-			var _second = 1000;
-			var _minute = _second * 60;
-			var _hour = _minute * 60;
-			var _day = _hour * 24;
-			var timer;
-
-			function showRemaining() {
-				var now = new Date();
-				var nowUTC = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
-				var distance = end - nowUTC;
-				
-				if (distance < 0) {
-
-				  clearInterval(timer);
-				  document.getElementById('countdown').innerHTML = 'EXPIRED!';
-
-				  return;
-				}
-				var days = Math.floor(distance / _day);
-				var hours = Math.floor((distance % _day) / _hour);
-				var minutes = Math.floor((distance % _hour) / _minute);
-				var seconds = Math.floor((distance % _minute) / _second);
-
-				document.getElementById('demo').innerHTML = hours + 'h ' +minutes + 'm ' + seconds + 's';
-			}
-
-			timer = setInterval(showRemaining, 1000);
-		</script>
-	</body>
+		<center>
+			<h1 style='color:#ffffff'>ACT 1</h1>
+			<p style="color:#AAAAAA">I need you to analyze this video for me and note what you see. What do you think of it?<br />I honestly don't know what to think; it was uploaded so long ago.</p>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/E3ocaYWYXNs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<p style="color:#AAAAAA">This Mitchell guy seems to be a very careful typer. A very <i>slow</i> typer at that. He does make a few mistakes though.</p>
+			<br />
+			<p style="color:#AAAAAA">(This is case sensitive this time)</p>
+			<form method="get" action="../act1/gate3.html">
+				<label for="mis1" style="color:#FFFFFF">1: </label>
+				<input type="text" name="mis1" size=1 maxlength='1' required />  
+				<input type="text" name="cor1" size=1 maxlength='1' required /><br />  
+				<label for="mis1" style="color:#FFFFFF">2: </label>
+				<input type="text" name="mis2" size=1 maxlength='1' required />
+				<input type="text" name="cor2" size=1 maxlength='1' required /><br />  
+				<label for="mis1" style="color:#FFFFFF">3: </label>
+				<input type="text" name="mis3" size=1 maxlength='1' required />  
+				<input type="text" name="cor3" size=1 maxlength='1' required /><br />
+				<br />
+				<input type="submit" />
+			</form>
+		</center>
+		</body>
 </html>
